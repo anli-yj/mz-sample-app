@@ -83,7 +83,7 @@
 		<repository>
 			<id>github</id>
 			<name>GitHub Packages</name>
-			<url>https://maven.pkg.github.com/anli-yj/sample-app</url>
+			<url>https://maven.pkg.github.com/anli-yj/mz-sample-app</url>
 		</repository>
 	</distributionManagement>
 
