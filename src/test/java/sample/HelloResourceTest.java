@@ -30,7 +30,14 @@ public class HelloResourceTest {
     }
 
     @Test
-    void tesHello() {
+    void testDefaultHello() {
+        var expected = "hello";
+        var actual = helllResource.hello();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void testAssignedHello() {
         var expected = "hello";
         var actual = helllResource.hello();
         assertEquals(expected, actual);
