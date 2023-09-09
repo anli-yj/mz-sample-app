@@ -16,7 +16,7 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 
-@HelidonTest
+@HelidonTest(resetPerTest = true) // add "resetPerTest" property to enable adding @AddConfig to test method
 @AddConfig(key = "server.port", value = "7001")
 @ExtendWith(JulToSLF4DelegateExtension.class)
 public class HelloResourceTest {
@@ -37,8 +37,9 @@ public class HelloResourceTest {
     }
 
     @Test
+    @AddConfig(key = "config.val", value = "foo")
     void testAssignedHello() {
-        var expected = "hello";
+        var expected = "foo";
         var actual = helllResource.hello();
         assertEquals(expected, actual);
     }
